@@ -13,7 +13,7 @@ class ConectaBanco:  # Define a classe
         port = 3306  # Porta configurada para o server MySQL
         self.con = MySQLdb.connect(host, user, password, db, port)  # Na variavel con cria nossa conexão
 
-    def verificaUsuario(self, usuario, senha):
+    def verificaUsuario(self,usuario, senha):
         self.conecta
         cur = self.con.cursor()
 
