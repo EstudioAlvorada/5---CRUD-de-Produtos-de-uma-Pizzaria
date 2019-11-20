@@ -14,7 +14,7 @@ class ConectaBanco:  # Define a classe
         port = 3306  # Porta configurada para o server MySQL
         self.con = MySQLdb.connect(host, user, password, db, port)  # Na variavel con cria nossa conexão
 
-    def verificaUsuario(self,usuario, senha):
+    def insereUsuario(self,usuario, senha):
         self.conecta()
         cur = self.con.cursor()
 
@@ -23,6 +23,7 @@ class ConectaBanco:  # Define a classe
         cur.execute(query)
         
         self.con.commit()
+        self.con.close()
 
         # if cur.rowcount > 0:
         #     result = True
@@ -30,6 +31,17 @@ class ConectaBanco:  # Define a classe
         #     result = False
             
         # return result
-        
 
-       
+    def verificaUsuario(self, usuario, senha):
+        self.conecta()
+        cur = self.con.cursor()
+
+        query = ("select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(usuario, senha))
+        cur.execute(query)
+
+        resultado = cur.fetchall()
+
+        if len(resultado) > 0:
+            return 1
+        else:
+            return 0

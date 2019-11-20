@@ -4,7 +4,6 @@ from tkinter import * #importa todas as blibiotecas do tkinter
 from controller.controller_usu import *
 from functools import partial
 
-
 senha = ""
 usuario = ""
 
@@ -12,8 +11,16 @@ controller = ControllerLogin()
 def btn_click():
    controller.insere(ed1.get(), ed2.get())
 
+
+
+
 janela = Tk()   #Criando a variavel janela que vai reprentara tela 
                 # e definindo como tkinter
+def btn_login():
+   resul = controller.verifica(ed1.get(), ed2.get())
+
+   if resul == 1:
+      janela.destroy()
 
 # Criando os elementos da tela
 lb0 = Label(janela, text="PIZZARIA")
@@ -24,6 +31,7 @@ ed2 = Entry(janela, show ="*")
 bt1 = Button(janela, text="Confirmar")
 bt2 = Button(janela, text="Cadastrar")
 bt2["command"] = partial(btn_click)
+bt1["command"] = partial(btn_login)
 
 
 
