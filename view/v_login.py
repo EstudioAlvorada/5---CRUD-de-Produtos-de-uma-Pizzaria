@@ -19,7 +19,7 @@ janela = Tk()   #Criando a variavel janela que vai reprentara tela
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())
 
-   if resul == 1:
+   if resul == True:
       janela.destroy()
 
 # Criando os elementos da tela
