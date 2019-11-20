@@ -1,4 +1,4 @@
-from conexao import ConectaBanco
+from model.conexao import ConectaBanco
 
 class ControllerLogin():
 

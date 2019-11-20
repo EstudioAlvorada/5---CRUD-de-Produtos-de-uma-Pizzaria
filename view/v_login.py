@@ -1,7 +1,7 @@
 # TELA DE LOGIN e SENHA
 
 from tkinter import * #importa todas as blibiotecas do tkinter
-from controller_usu import *
+from controller.controller_usu import *
 from functools import partial
 
 
