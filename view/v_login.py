@@ -1,9 +1,8 @@
 # TELA DE LOGIN e SENHA
 
-from tkinter import * #importa todas as blibiotecas do tkinter
+from tkinter import *  # importa todas as blibiotecas do tkinter
 from controller.controller_usu import *
 from functools import partial
-
 
 senha = ""
 usuario = ""
@@ -11,6 +10,7 @@ usuario = ""
 controller = ControllerLogin()
 def btn_click():
    controller.insere(ed1.get(), ed2.get())
+
 
 janela = Tk()   #Criando a variavel janela que vai reprentara tela 
                 # e definindo como tkinter
@@ -20,14 +20,10 @@ lb0 = Label(janela, text="PIZZARIA")
 lb1 = Label(janela, text="Login: ")
 lb2 = Label(janela, text="Senha: ")
 ed1 = Entry(janela,)
-ed2 = Entry(janela, show ="*")
+ed2 = Entry(janela, show="*")
 bt1 = Button(janela, text="Confirmar")
 bt2 = Button(janela, text="Cadastrar")
 bt2["command"] = partial(btn_click)
-
-
-
-
 
 #Inserindo so elementos na tela
 lb0.grid(row=0, column=0)
@@ -47,12 +43,8 @@ ed2.place(x=100, y=90)
 bt1.place(x=100, y=115)
 bt2.place(x=170, y=115)
 
-
 # Tamanho da tela
 janela.geometry("300x200+200+200") 
 janela.title("Login")
 janela.configure(background='#88DDDF')
 janela.mainloop()
-
-
-    
