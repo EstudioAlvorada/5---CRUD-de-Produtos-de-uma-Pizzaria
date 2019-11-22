@@ -1,8 +1,9 @@
 # TELA DE LOGIN e SENHA
 
-from tkinter import *  # importa todas as blibiotecas do tkinter
+from tkinter import *
 from controller.controller_usu import *
 from functools import partial
+from view.v_produtos import *
 
 senha = ""
 usuario = ""
@@ -11,19 +12,16 @@ controller = ControllerLogin()
 def btn_click():
    controller.insere(ed1.get(), ed2.get())
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a565f0a87da68b7f8ac8683ceab19f6fd6ad3d16
 janela = Tk()   #Criando a variavel janela que vai reprentara tela 
                 # e definindo como tkinter
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())
 
    if resul == True:
+      tela2 = tela_produtos()
       janela.destroy()
+      tela2.chamaTelaProdutos()
+
 
 # Criando os elementos da tela
 lb0 = Label(janela, text="PIZZARIA")
