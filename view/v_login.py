@@ -12,8 +12,18 @@ def btn_click():
    controller.insere(ed1.get(), ed2.get())
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a565f0a87da68b7f8ac8683ceab19f6fd6ad3d16
 janela = Tk()   #Criando a variavel janela que vai reprentara tela 
                 # e definindo como tkinter
+def btn_login():
+   resul = controller.verifica(ed1.get(), ed2.get())
+
+   if resul == True:
+      janela.destroy()
 
 # Criando os elementos da tela
 lb0 = Label(janela, text="PIZZARIA")
@@ -24,6 +34,7 @@ ed2 = Entry(janela, show="*")
 bt1 = Button(janela, text="Confirmar")
 bt2 = Button(janela, text="Cadastrar")
 bt2["command"] = partial(btn_click)
+bt1["command"] = partial(btn_login)
 
 #Inserindo so elementos na tela
 lb0.grid(row=0, column=0)
