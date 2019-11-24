@@ -12,15 +12,10 @@ class tela_produtos:
         frame_aba3 = Frame(abas)
         frame_aba4 = Frame(abas)
 
-        label1 = Label(frame_aba1, text="Este é a aba 1")
-        label2 = Label(frame_aba2, text="Este é a aba 2")
-        label3 = Label(frame_aba3, text="Este é a aba 3")
-        label4 = Label(frame_aba4, text="Este é a aba 4")
-
-        label1.grid()
-        label2.grid()
-        label3.grid()
-        label4.grid()
+        label1 = Label(frame_aba1, text="Em Desenvolvimento") ; label1.grid()
+        label2 = Label(frame_aba2, text="Em Desenvolvimento") ; label2.grid()
+        label3 = Label(frame_aba3, text="Em Desenvolvimento") ; label3.grid()
+        label4 = Label(frame_aba4, text="Em Desenvolvimento") ; label4.grid()
 
         # CREAT
         abas.add(frame_aba1, text="    *ADICIONAR*    ")
@@ -34,6 +29,6 @@ class tela_produtos:
         abas.pack(fill=BOTH, expand=1)
 
         janela.geometry("400x300+200+200")
-        janela.title("CRUD - Produtos")
+        janela.title("Pizzaria Top - CRUD Produtos")
         janela.mainloop()
 
