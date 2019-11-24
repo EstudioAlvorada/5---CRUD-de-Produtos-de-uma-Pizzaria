@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter.ttk import *
+from tkinter import * ; from tkinter.ttk import *
 
 class tela_produtos:
 
@@ -23,14 +22,18 @@ class tela_produtos:
         label3.grid()
         label4.grid()
 
-        abas.add(frame_aba1, text="Create")
-        abas.add(frame_aba2, text="Read")
-        abas.add(frame_aba3, text="Update")
-        abas.add(frame_aba4, text="Delete")
+        # CREAT
+        abas.add(frame_aba1, text="    *ADICIONAR*    ")
+        # READ
+        abas.add(frame_aba2, text="    *PROCURAR*    ")
+        # UPADTE
+        abas.add(frame_aba3, text="    *ATUALIZAR*    ")
+        # DELETE
+        abas.add(frame_aba4, text="    *APAGAR*    ")
 
         abas.pack(fill=BOTH, expand=1)
 
-        janela.geometry("500x300+200+200")
+        janela.geometry("400x300+200+200")
         janela.title("CRUD - Produtos")
         janela.mainloop()
 
