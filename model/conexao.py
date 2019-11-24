@@ -19,8 +19,8 @@ class ConectaBanco:  # Define a classe
         cur = self.con.cursor()
 
         query = (
-            'insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "Marcus Primo");'.format(
-                usuario, senha))
+                'insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "Marcus Primo");'.format(
+                    usuario, senha))
 
         cur.execute(query)
 
