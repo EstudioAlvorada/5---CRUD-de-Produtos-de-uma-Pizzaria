@@ -4,6 +4,7 @@ from tkinter import * ; from tkinter.ttk import *
 from controller.controller_usu import *
 from functools import partial
 from view.v_produtos import *
+from view.v_cadastro import *
 
 senha = ""
 usuario = ""
@@ -11,7 +12,9 @@ usuario = ""
 controller = ControllerLogin()
 
 def btn_click():
-   controller.insere(ed1.get(), ed2.get())
+    tela_teste = tela_cadastro()
+    tela_teste.chamaTelaCadastro()
+   #controller.insere(ed1.get(), ed2.get())
 
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())

@@ -29,6 +29,7 @@ class tela_produtos:
         abas.pack(fill=BOTH, expand=1)
 
         janela.geometry("400x300+200+200")
+        janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - CRUD Produtos")
         janela.mainloop()
 
