@@ -17,10 +17,10 @@ class tela_cadastro:
 
 
         # Logo Pizzaria Top
-        # img = PhotoImage(file="../assets/img/logo.png")
-        # logo = img.subsample(2, 2)
-        # label = Label(janela, image=logo)
-        # label.place(x=0, y=0)
+        img = PhotoImage(file="../assets/img/logo.png")
+        logo = img.subsample(2, 2)
+        label = Label(janela, image=logo)
+        label.place(x=0, y=0)
 
         # Criando os elementos da tela ; Inserindo so elementos na tela ; Posição dos elementos
 
@@ -81,7 +81,7 @@ class tela_cadastro:
         bt1["command"] = partial(cadastra)
 
 
-        janela.geometry("500x400+200+200")
+        janela.geometry("400x350+200+200")
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - Cadastro de Usuario")
         janela.mainloop()
