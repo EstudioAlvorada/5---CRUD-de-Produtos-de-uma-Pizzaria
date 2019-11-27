@@ -11,7 +11,19 @@ class tela_cadastro:
             controller = ControllerLogin()
 
             if ed2.get() == ed3.get():
-                controller.insere(ed1.get(), ed2.get(), ed4.get())
+                testaUsuario = ControllerLogin()
+                verifica = testaUsuario.verifica(ed1.get())
+
+                if verifica == 0:
+                    controller.insere(ed1.get(), ed2.get(), ed4.get())
+                    print("cadastro realizado")
+                    ed1.delete(0, END)
+                    ed2.delete(0, END)
+                    ed3.delete(0, END)
+                    ed4.delete(0, END)
+                    ed1.focus()
+                else:
+                    print("Usuario já existe")
             else:
                 print("senhas diferentes")
 

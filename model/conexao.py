@@ -18,14 +18,13 @@ class ConectaBanco:  # Define a classe
         self.conecta()
         cur = self.con.cursor()
 
-        query = (
-                'insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "{}");'.format(
-                    usuario, senha, nome))
-
+        query = ('insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "{}");'.format(usuario, senha, nome))
         cur.execute(query)
 
         self.con.commit()
         self.con.close()
+
+
 
         # if cur.rowcount > 0:
         #     result = True
@@ -41,6 +40,23 @@ class ConectaBanco:  # Define a classe
         query = (
             "select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(
                 usuario, senha))
+        cur.execute(query)
+
+        resultado = cur.fetchall()
+
+        if len(resultado) > 0:
+            return True
+        else:
+            return False
+
+
+    def verificaUsuario(self, usuario):
+        self.conecta()
+        cur = self.con.cursor()
+
+        query = (
+            "select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}';".format(
+                usuario))
         cur.execute(query)
 
         resultado = cur.fetchall()
