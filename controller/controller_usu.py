@@ -2,9 +2,9 @@ from model.conexao import ConectaBanco
 
 class ControllerLogin():
 
-    def insere(self, usuario, senha):
+    def insere(self, usuario, senha, nome):
         banco = ConectaBanco()
-        banco.insereUsuario(usuario, senha)
+        banco.insereUsuario(usuario, senha, nome)
 
 
 

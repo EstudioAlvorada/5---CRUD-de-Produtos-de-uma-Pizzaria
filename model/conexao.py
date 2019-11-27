@@ -14,13 +14,13 @@ class ConectaBanco:  # Define a classe
         port = 3306  # Porta configurada para o server MySQL
         self.con = MySQLdb.connect(host, user, password, db, port)  # Na variavel con cria nossa conexão
 
-    def insereUsuario(self, usuario, senha):
+    def insereUsuario(self, usuario, senha, nome):
         self.conecta()
         cur = self.con.cursor()
 
         query = (
-                'insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "Marcus Primo");'.format(
-                    usuario, senha))
+                'insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "{}");'.format(
+                    usuario, senha, nome))
 
         cur.execute(query)
 
