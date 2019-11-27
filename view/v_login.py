@@ -10,11 +10,15 @@ senha = ""
 usuario = ""
 
 controller = ControllerLogin()
+#Criando a variavel janela que vai reprentara tela e definindo como tkinter
+janela = Tk()
 
 def btn_click():
     tela_teste = tela_cadastro()
+    janela.destroy()
     tela_teste.chamaTelaCadastro()
    #controller.insere(ed1.get(), ed2.get())
+
 
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())
@@ -24,8 +28,7 @@ def btn_login():
       janela.destroy()
       tela2.chamaTelaProdutos()
 
-#Criando a variavel janela que vai reprentara tela e definindo como tkinter
-janela = Tk()
+
 
 # Logo Pizzaria Top
 img = PhotoImage(file="../assets/img/logo.png")
