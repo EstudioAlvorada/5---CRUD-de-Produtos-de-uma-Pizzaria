@@ -37,32 +37,27 @@ label.place(x=0, y=0)
 
 # Titulo
 lb0 = Label(janela, text="LOGIN") ; lb0.grid(row=0, column=0) ; lb0.place(x=0, y=135)
-lb0.configure(font="Arial 14 bold",
-              foreground="#FFFFFF",
-              background="#000000",
-              width=36)
+lb0.configure(font="Arial 14 bold",foreground="#FFFFFF",background="#000000",width=36)
 
 # Login
-lb1 = Label(janela, text="Login: ") ; lb1.grid(row=1, column=1) ; lb1.place(x=45, y=170)
-lb1.configure(font="Arial 14 bold",
-              foreground="#000000",
-              background="#CCCCCC")
-ed1 = Entry(janela,) ; ed1.grid(row=1, column=2) ; ed1.place(x=115, y=175)
-# Senha
-lb2 = Label(janela, text="Senha: ") ; lb2.grid(row=2, column=1) ; lb2.place(x=45, y=210)
-lb2.configure(font="Arial 14 bold",
-              foreground="#000000",
-              background="#CCCCCC")
-ed2 = Entry(janela, show="*") ; ed2.grid(row=2, column=2) ; ed2.place(x=115, y=215)
+lb1 = Label(janela, text="Login:") ; lb1.grid(row=1, column=1) ; lb1.place(x=45, y=170)
+lb1.configure(font="Arial 12 bold",foreground="#000000",background="#CCCCCC")
+ed1 = Entry(janela,) ; ed1.grid(row=1, column=2) ; ed1.place(x=110, y=170)
 
-bt1 = Button(janela, text="Confirmar") ; bt1.grid(row=3, column=2, sticky=W) ; bt1.place(x=100, y=250)
-bt2 = Button(janela, text="Cadastrar") ; bt2.grid(row=3, column=2, sticky=E) ; bt2.place(x=170, y=250)
+# Senha
+lb2 = Label(janela, text="Senha:") ; lb2.grid(row=2, column=1) ; lb2.place(x=45, y=210)
+lb2.configure(font="Arial 12 bold",foreground="#000000",background="#CCCCCC")
+ed2 = Entry(janela, show="*") ; ed2.grid(row=2, column=2) ; ed2.place(x=110, y=210)
+
+# Botão Confirmar
+bt1 = Button(janela, text="Confirmar") ; bt1.grid(row=3, column=2) ; bt1.place(x=150, y=250)
+# Botão Cadastrar
+bt2 = Button(janela, text="Cadastrar") ; bt2.grid(row=3, column=2) ; bt2.place(x=150, y=275)
 
 bt1["command"] = partial(btn_login)
 bt2["command"] = partial(btn_click)
 
-
-janela.geometry("400x300+200+200")
+janela.geometry("400x350+200+200")
 janela.iconbitmap("../assets/img/icone.ico")
 janela.title("Pizzaria Top - Login do Usuario")
 janela.configure(background='#CCCCCC')
