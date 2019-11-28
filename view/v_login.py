@@ -16,7 +16,6 @@ janela = Tk()
 
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())
-
    if resul == True:
       tela2 = tela_produtos()
       janela.destroy()
@@ -45,28 +44,29 @@ lb0 = Label(janela, text="LOGIN") ; lb0.grid(row=0, column=0) ; lb0.place(x=0, y
 lb0.configure(font=fonte, foreground="#FFFFFF", background="#000000", width=30)
 
 # Login
-lb1 = Label(janela, text="Login: ") ; lb1.grid(row=1, column=1) ; lb1.place(x=35, y=175)
+lb1 = Label(janela, text="Login: ") ; lb1.grid(row=1, column=1) ; lb1.place(x=15, y=175)
 lb1.configure(font=fonte, foreground="#000000", background="#CCCCCC")
-ed1 = Entry(janela, font=fonte) ; ed1.grid(row=1, column=2) ; ed1.place(x=110, y=175)
+ed1 = Entry(janela, font=fonte, width=30) ; ed1.grid(row=1, column=2) ; ed1.place(x=15, y=205)
 
 # Senha
-lb2 = Label(janela, text="Senha: ") ; lb2.grid(row=2, column=1) ; lb2.place(x=35, y=215)
+lb2 = Label(janela, text="Senha: ") ; lb2.grid(row=2, column=1) ; lb2.place(x=15, y=235)
 lb2.configure(font=fonte, foreground="#000000", background="#CCCCCC")
-ed2 = Entry(janela, font=fonte, show="*") ; ed2.grid(row=2, column=2) ; ed2.place(x=110, y=215)
+ed2 = Entry(janela, font=fonte, show="*", width=30) ; ed2.grid(row=2, column=2) ; ed2.place(x=15, y=265)
 
 # Botão Confirmar (1)
 bt1 = Button(janela, font=fonte, text="Confirmar", fg="#000000",
-             activebackground="#CCCCCC", activeforeground="#FFFFFF")
-bt1.grid(row=3, column=3) ; bt1.place(x=150, y=250)
+             activebackground="#CCCCCC", activeforeground="#FFFFFF", width=20)
+bt1.grid(row=3, column=3) ; bt1.place(x=70, y=320)
 bt1["command"] = partial(btn_login)
 
 # Botão Cadastrar (2)
-bt2 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar", fg="#000000",
-             activebackground="#CCCCCC", activeforeground="#FFFFFF")
-bt2.grid(row=4, column=2) ; bt2.place(x=164, y=300)
+bt2 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#0000FF",
+             activebackground="#000000", activeforeground="#FFFFFF", width=15)
+bt2.grid(row=4, column=2) ; bt2.place(x=125, y=370)
 bt2["command"] = partial(btn_click)
 
-janela.geometry("390x350+200+200")  # largura * altura + x + y
+# __ PARAMETROS DA JANELA __
+janela.geometry("390x450+200+200")  # largura * altura + x + y
 janela.iconbitmap("../assets/img/icone.ico")  # icone do cabeçalho da janela
 janela.title("Pizzaria Top - Login do Usuario")  # texto do cabeçalho da janela
 janela.configure(background='#CCCCCC')  # cor de fundo da janela

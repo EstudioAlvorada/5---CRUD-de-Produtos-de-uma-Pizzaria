@@ -67,8 +67,8 @@ class tela_cadastro:
         bt1["command"] = partial(cadastra)
 
         # Botão Voltar (2)
-        bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<- Voltar", fg="#FF0000",
-                     activebackground="#CCCCCC", activeforeground="#FFFFFF")
+        bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<< Voltar", fg="#FF0000",
+                     activebackground="#000000", activeforeground="#FFFFFF")
         bt2.grid(row=9, column=2) ; bt2.place(x=295, y=410)
 
         janela.geometry("390x450+200+200")
