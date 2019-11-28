@@ -8,6 +8,8 @@ class ControllerLogin():
 
     def verifica(self, *args):
         banco = ConectaBanco()
-        resultado = banco.verificaUsuario(args[0], args[1])
+        resultado = banco.verificaUsuario(*args)
         return resultado
+
+
 

@@ -6,6 +6,7 @@ from functools import partial
 from tkinter import *
 
 class tela_produtos:
+
     def chamaTelaProdutos(self):
         janela = Tk()
         def btn_creat():
