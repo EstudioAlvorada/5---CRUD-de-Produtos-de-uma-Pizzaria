@@ -14,11 +14,13 @@ class ConectaBanco:  # Define a classe
         port = 3306  # Porta configurada para o server MySQL
         self.con = MySQLdb.connect(host, user, password, db, port)  # Na variavel con cria nossa conexão
 
-    def insereUsuario(self, usuario, senha, nome):
+    def insereUsuario(self, usuario, senha, nome): #Método que faz a criação do usuário no banco de dados, inserindo o nome, senha e login
         self.conecta()
         cur = self.con.cursor()
 
         query = ('insert into tbl_usuarios (login_usuario, senha_usuario, nome_usuario)values ("{}", "{}", "{}");'.format(usuario, senha, nome))
+        #Query que faz a inserção da login, senha e nome
+
         cur.execute(query)
 
         self.con.commit()
@@ -33,24 +35,25 @@ class ConectaBanco:  # Define a classe
 
         # return result
 
-    def verificaUsuario(self, usuario, senha):
+    def verificaUsuario(self, usuario, senha): #Função que verifica se o usuário existe no banco. No código também existe outra função chamada verificaUsuario, esta recebe como parametro o usuario e a senha para fazer a verificação
         self.conecta()
         cur = self.con.cursor()
 
-        query = (
-            "select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(
-                usuario, senha))
+        query = ("select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(usuario, senha))
+        #Query que seleciona o usuario e a senha de acordo com os valores passados pela view
+
         cur.execute(query)
 
-        resultado = cur.fetchall()
+        resultado = cur.fetchall() #Guarda o resultado do select realizado acima
 
-        if len(resultado) > 0:
+
+        if len(resultado) > 0: #Verifica se a quantidade de linhas do select realizado é maior que 0, se for significa que o usuario já existe, se não for significa que o usuario ainda não existe
             return True
         else:
             return False
 
 
-    def verificaUsuario(self, usuario):
+    def verificaUsuario(self, usuario): #Praticamente a mesma função do que a de cima, sendo a unica diferença o fato de receber só o parametro do usuario para fazer a verificação
         self.conecta()
         cur = self.con.cursor()
 
