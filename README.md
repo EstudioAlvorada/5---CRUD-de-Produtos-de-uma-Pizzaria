@@ -1,7 +1,7 @@
 ## ATIVIDADE DE PYTHON
 
-Desenvolvedores:
-Marcus Primo
+Desenvolvedores:<br>
+Marcus Primo <br>
 Renan Santos
 
 Orientador: Diego
