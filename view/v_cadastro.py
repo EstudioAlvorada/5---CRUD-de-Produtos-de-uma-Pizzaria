@@ -10,17 +10,17 @@ class tela_cadastro:
         def cadastra():
             controller = ControllerLogin()
 
-            if ed2.get() == ed3.get():
+            if ed2.get() == ed4.get(): # confirma senha
                 testaUsuario = ControllerLogin()
                 verifica = testaUsuario.verifica(ed1.get())
 
                 if verifica == 0:
-                    controller.insere(ed1.get(), ed2.get(), ed4.get())
+                    controller.insere(ed1.get(), ed2.get(), ed1.get())  # nome
                     print("cadastro realizado")
-                    ed1.delete(0, END)
-                    ed2.delete(0, END)
-                    ed3.delete(0, END)
-                    ed4.delete(0, END)
+                    ed2.delete(0, END)  # login
+                    ed3.delete(0, END)  # senha
+                    ed4.delete(0, END)  # confirma senha
+                    ed1.delete(0, END)  # nome
                     ed1.focus()
                 else:
                     print("Usuario já existe")
@@ -51,24 +51,31 @@ class tela_cadastro:
         # Login
         lb2 = Label(janela, text="Login: "); lb2.grid(row=3, column=1); lb2.place(x=10, y=230)
         lb2.configure(font=fonte, foreground="#000000", background="#CCCCCC")
-        ed2 = Entry(janela, font=fonte, width=30) ; ed2.grid(row=4, column=2) ; ed2.place(x=10, y=260)
+        ed2 = Entry(janela, font=fonte, width=30) ; ed2.grid(row=4, column=1) ; ed2.place(x=10, y=260)
 
         # Senha
-        #lb3 = Label(janela, text="Senha: ") ; lb3.grid(row=5, column=1) ; lb3.place(x=10, y=250)
-        #lb3.configure(font="Arial 14 bold", foreground="#000000", background="#CCCCCC")
-        #ed3 = Entry(janela, font=fonte, show="*", width=16) ; ed3.grid(row=6, column=1) ; ed3.place(x=80, y=250)
+        lb3 = Label(janela, text="Senha: ") ; lb3.grid(row=5, column=1) ; lb3.place(x=10, y=290)
+        lb3.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed3 = Entry(janela, font=fonte, show="*", width=30) ; ed3.grid(row=6, column=1) ; ed3.place(x=10, y=315)
 
         # Confirmar Senha
-        #lb4 = Label(janela, text="Confirmar Senha: ") ; lb4.grid(row=4, column=2) ; lb4.place(x=45, y=250)
-        #lb4.configure(font="Arial 14 bold", foreground="#000000", background="#CCCCCC")
-        #ed4 = Entry(janela, show="*") ; ed4.grid(row=3, column=3) ; ed3.place(x=220, y=255)
+        lb4 = Label(janela, text="Confirmar Senha: ") ; lb4.grid(row=7, column=1) ; lb4.place(x=10, y=345)
+        lb4.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed4 = Entry(janela, font=fonte, show="*", width=30) ; ed4.grid(row=8, column=1) ; ed4.place(x=10, y=375)
 
         # Botão Cadastrar (1)
-        bt1 = Button(janela, text="Cadastrar") ; bt1.grid(row=3, column=2) ; bt1.place(x=105, y=370)
+        bt1 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar", fg="#000000",
+                    activebackground="#CCCCCC", activeforeground="#FFFFFF")
+        bt1.grid(row=9, column=1) ; bt1.place(x=15, y=410)
+
+        # Botão Voltar (2)
+        bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<- Voltar", fg="#FF0000",
+                     activebackground="#CCCCCC", activeforeground="#FFFFFF")
+        bt2.grid(row=9, column=2) ; bt2.place(x=295, y=410)
 
         bt1["command"] = partial(cadastra)
 
-        janela.geometry("390x400+200+200")
+        janela.geometry("390x450+200+200")
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - Cadastro de Usuario")
         janela.configure(background='#CCCCCC')

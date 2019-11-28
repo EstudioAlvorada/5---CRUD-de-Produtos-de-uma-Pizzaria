@@ -65,7 +65,7 @@ bt2.grid(row=4, column=2) ; bt2.place(x=164, y=300)
 bt1["command"] = partial(btn_login)
 bt2["command"] = partial(btn_click)
 
-janela.geometry("390x350+200+200")
+janela.geometry("390x350+200+200")  # largura * altura + x + y
 janela.iconbitmap("../assets/img/icone.ico")
 janela.title("Pizzaria Top - Login do Usuario")
 janela.configure(background='#CCCCCC')
