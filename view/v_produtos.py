@@ -1,5 +1,5 @@
-from tkinter.ttk import *
 from tkinter import *
+from tkinter.ttk import *
 
 class tela_produtos:
 
@@ -18,20 +18,19 @@ class tela_produtos:
         label3 = Label(frame_aba3, text="Em Desenvolvimento") ; label3.grid()
         label4 = Label(frame_aba4, text="Em Desenvolvimento") ; label4.grid()
 
-        # ABA - CREAT
+        # CREAT
         abas.add(frame_aba1, text="    *ADICIONAR*    ")
-        # ABA - READ
+        # READ
         abas.add(frame_aba2, text="    *PROCURAR*    ")
-        # ABA - UPADTE
+        # UPADTE
         abas.add(frame_aba3, text="    *ATUALIZAR*    ")
-        # ABA - DELETE
+        # DELETE
         abas.add(frame_aba4, text="    *APAGAR*    ")
 
         abas.pack(fill=BOTH, expand=1)
 
-        janela.geometry("390x350+200+200")
+        janela.geometry("400x300+200+200")
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - CRUD Produtos")
-        janela.configure(background='#CCCCCC')
         janela.mainloop()
 

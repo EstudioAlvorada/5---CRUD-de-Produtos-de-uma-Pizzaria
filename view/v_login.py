@@ -11,15 +11,8 @@ usuario = ""
 
 controller = ControllerLogin()
 
-#Criando a variavel janela que vai reprentara tela e definindo como tkinter
+# Criando a variavel janela que vai reprentara tela e definindo como tkinter
 janela = Tk()
-
-def btn_click():
-    tela_teste = tela_cadastro()
-    janela.destroy()
-    tela_teste.chamaTelaCadastro()
-   #controller.insere(ed1.get(), ed2.get())
-
 
 def btn_login():
    resul = controller.verifica(ed1.get(), ed2.get())
@@ -29,6 +22,15 @@ def btn_login():
       janela.destroy()
       tela2.chamaTelaProdutos()
 
+
+def btn_click():
+    tela_teste = tela_cadastro()
+    janela.destroy()
+    tela_teste.chamaTelaCadastro()
+   #controller.insere(ed1.get(), ed2.get())
+
+
+# __ TELA __
 # Logo Pizzaria Top
 img = PhotoImage(file="../assets/img/logo.png")
 logo = img.subsample(2, 2)
@@ -56,17 +58,16 @@ ed2 = Entry(janela, font=fonte, show="*") ; ed2.grid(row=2, column=2) ; ed2.plac
 bt1 = Button(janela, font=fonte, text="Confirmar", fg="#000000",
              activebackground="#CCCCCC", activeforeground="#FFFFFF")
 bt1.grid(row=3, column=3) ; bt1.place(x=150, y=250)
+bt1["command"] = partial(btn_login)
 
 # Botão Cadastrar (2)
 bt2 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar", fg="#000000",
              activebackground="#CCCCCC", activeforeground="#FFFFFF")
 bt2.grid(row=4, column=2) ; bt2.place(x=164, y=300)
-
-bt1["command"] = partial(btn_login)
 bt2["command"] = partial(btn_click)
 
 janela.geometry("390x350+200+200")  # largura * altura + x + y
-janela.iconbitmap("../assets/img/icone.ico")
-janela.title("Pizzaria Top - Login do Usuario")
-janela.configure(background='#CCCCCC')
+janela.iconbitmap("../assets/img/icone.ico")  # icone do cabeçalho da janela
+janela.title("Pizzaria Top - Login do Usuario")  # texto do cabeçalho da janela
+janela.configure(background='#CCCCCC')  # cor de fundo da janela
 janela.mainloop()

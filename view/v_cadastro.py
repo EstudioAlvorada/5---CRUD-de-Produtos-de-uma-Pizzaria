@@ -1,19 +1,15 @@
-from tkinter import *
 from controller.controller_usu import *
 from functools import partial
+from tkinter import *
 
 class tela_cadastro:
-
     def chamaTelaCadastro(self):
         janela = Tk()
-
         def cadastra():
             controller = ControllerLogin()
-
             if ed2.get() == ed4.get(): # confirma senha
                 testaUsuario = ControllerLogin()
                 verifica = testaUsuario.verifica(ed1.get())
-
                 if verifica == 0:
                     controller.insere(ed1.get(), ed2.get(), ed1.get())  # nome
                     print("cadastro realizado")
@@ -28,6 +24,7 @@ class tela_cadastro:
                 print("senhas diferentes")
 
 
+        # __ TELA __
         # Logo Pizzaria Top
         img = PhotoImage(file="../assets/img/logo.png")
         logo = img.subsample(2, 2)
@@ -67,13 +64,12 @@ class tela_cadastro:
         bt1 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar", fg="#000000",
                     activebackground="#CCCCCC", activeforeground="#FFFFFF")
         bt1.grid(row=9, column=1) ; bt1.place(x=15, y=410)
+        bt1["command"] = partial(cadastra)
 
         # Botão Voltar (2)
         bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<- Voltar", fg="#FF0000",
                      activebackground="#CCCCCC", activeforeground="#FFFFFF")
         bt2.grid(row=9, column=2) ; bt2.place(x=295, y=410)
-
-        bt1["command"] = partial(cadastra)
 
         janela.geometry("390x450+200+200")
         janela.iconbitmap("../assets/img/icone.ico")
