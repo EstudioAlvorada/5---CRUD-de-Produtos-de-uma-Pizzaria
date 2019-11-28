@@ -6,10 +6,12 @@ class ControllerLogin():
         banco = ConectaBanco()
         banco.insereUsuario(usuario, senha, nome)
 
-
-
     def verifica(self, usuario, senha):
         banco = ConectaBanco()
         resultado = banco.verificaUsuario(usuario, senha)
         return resultado
-        
+
+    def verifica(self, usuario):
+        banco = ConectaBanco()
+        resultado = banco.verificaUsuario(usuario)
+        return resultado
