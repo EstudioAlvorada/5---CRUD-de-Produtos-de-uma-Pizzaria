@@ -1,15 +1,18 @@
 # TELA DE CADASTRO
 
-from controller.controller_usu import *
 from functools import partial
 from tkinter import *
+from controller.controller_usu import ControllerLogin
 
-class tela_cadastro:
+
+class Tela_cadastro:
+
     def chamaTelaCadastro(self):
+
         janela = Tk()
         def cadastra():
             controller = ControllerLogin()
-            if ed2.get() == ed4.get(): # confirma senha
+            if ed3.get() == ed4.get(): # confirma senha
                 testaUsuario = ControllerLogin()
                 verifica = testaUsuario.verifica(ed1.get())
                 if verifica == 0:
@@ -20,10 +23,13 @@ class tela_cadastro:
                     ed4.delete(0, END)  # confirma senha
                     ed1.delete(0, END)  # nome
                     ed1.focus()
+
                 else:
                     print("Usuario já existe")
             else:
                 print("senhas diferentes")
+
+
 
 
         #__ TELA __
@@ -72,6 +78,7 @@ class tela_cadastro:
         bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<< Voltar", fg="#E8252D",
                      activebackground="#000000", activeforeground="#FFFFFF")
         bt2.grid(row=9, column=2) ; bt2.place(x=295, y=410)
+
 
         # __ PARAMETROS DA JANELA __
         janela.geometry("390x450+200+200")
