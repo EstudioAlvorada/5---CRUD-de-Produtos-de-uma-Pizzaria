@@ -56,17 +56,18 @@ ed2 = Entry(janela, font=fonte, show="*", width=30) ; ed2.grid(row=2, column=2) 
 # Botão Confirmar (1)
 bt1 = Button(janela, font=fonte, text="Confirmar", fg="#000000",
              activebackground="#CCCCCC", activeforeground="#FFFFFF", width=20)
-bt1.grid(row=3, column=3) ; bt1.place(x=70, y=320)
+bt1.grid(row=3, column=3) ; bt1.place(x=65, y=320)
 bt1["command"] = partial(btn_login)
 
 # Botão Cadastrar (2)
-bt2 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#0000FF",
+bt2 = Button(janela, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
              activebackground="#000000", activeforeground="#FFFFFF", width=15)
-bt2.grid(row=4, column=2) ; bt2.place(x=125, y=370)
+bt2.grid(row=4, column=2) ; bt2.place(x=120, y=375)
 bt2["command"] = partial(btn_click)
 
 # __ PARAMETROS DA JANELA __
 janela.geometry("390x450+200+200")  # largura * altura + x + y
+janela.maxsize(width=390, height=450)  # tamanho maximo
 janela.iconbitmap("../assets/img/icone.ico")  # icone do cabeçalho da janela
 janela.title("Pizzaria Top - Login do Usuario")  # texto do cabeçalho da janela
 janela.configure(background='#CCCCCC')  # cor de fundo da janela

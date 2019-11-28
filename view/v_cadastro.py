@@ -1,3 +1,5 @@
+# TELA DE CADASTRO
+
 from controller.controller_usu import *
 from functools import partial
 from tkinter import *
@@ -24,7 +26,7 @@ class tela_cadastro:
                 print("senhas diferentes")
 
 
-        # __ TELA __
+        #__ TELA __
         # Logo Pizzaria Top
         img = PhotoImage(file="../assets/img/logo.png")
         logo = img.subsample(2, 2)
@@ -67,11 +69,13 @@ class tela_cadastro:
         bt1["command"] = partial(cadastra)
 
         # Botão Voltar (2)
-        bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<< Voltar", fg="#FF0000",
+        bt2 = Button(janela, font=('Arial', '12', 'bold'), text="<< Voltar", fg="#E8252D",
                      activebackground="#000000", activeforeground="#FFFFFF")
         bt2.grid(row=9, column=2) ; bt2.place(x=295, y=410)
 
+        # __ PARAMETROS DA JANELA __
         janela.geometry("390x450+200+200")
+        janela.maxsize(width=390, height=450)
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - Cadastro de Usuario")
         janela.configure(background='#CCCCCC')
