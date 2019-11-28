@@ -35,36 +35,31 @@ class ConectaBanco:  # Define a classe
 
         # return result
 
-    def verificaUsuario(self, usuario, senha): #Função que verifica se o usuário existe no banco. No código também existe outra função chamada verificaUsuario, esta recebe como parametro o usuario e a senha para fazer a verificação
+    def verificaUsuario(self, *args): #Função que verifica se o usuário existe no banco. No código também existe outra função chamada verificaUsuario, esta recebe como parametro o usuario e a senha para fazer a verificação
         self.conecta()
         cur = self.con.cursor()
 
-        query = ("select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(usuario, senha))
-        #Query que seleciona o usuario e a senha de acordo com os valores passados pela view
+        if len(args) == 2:
+            query = ("select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}' and senha_usuario = '{}';".format(args[0], args[1]))
+            #Query que seleciona o usuario e a senha de acordo com os valores passados pela view
+            cur.execute(query)
+            resultado = cur.fetchall() #Guarda o resultado do select realizado acima
+            if len(resultado) > 0: #Verifica se a quantidade de linhas do select realizado é maior que 0, se for significa que o usuario já existe, se não for significa que o usuario ainda não existe
+                return True
+            else:
+                return False
+        elif len(args) == 1:
+            self.conecta()
+            cur = self.con.cursor()
 
-        cur.execute(query)
+            query = (
+                "select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}';".format(
+                    args[0]))
+            cur.execute(query)
 
-        resultado = cur.fetchall() #Guarda o resultado do select realizado acima
+            resultado = cur.fetchall()
 
-
-        if len(resultado) > 0: #Verifica se a quantidade de linhas do select realizado é maior que 0, se for significa que o usuario já existe, se não for significa que o usuario ainda não existe
-            return True
-        else:
-            return False
-
-
-    def verificaUsuario(self, usuario): #Praticamente a mesma função do que a de cima, sendo a unica diferença o fato de receber só o parametro do usuario para fazer a verificação
-        self.conecta()
-        cur = self.con.cursor()
-
-        query = (
-            "select login_usuario, senha_usuario from tbl_usuarios where login_usuario = '{}';".format(
-                usuario))
-        cur.execute(query)
-
-        resultado = cur.fetchall()
-
-        if len(resultado) > 0:
-            return True
-        else:
-            return False
+            if len(resultado) > 0:
+                return True
+            else:
+                return False
