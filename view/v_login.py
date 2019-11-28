@@ -67,7 +67,7 @@ bt2["command"] = partial(btn_click)
 
 # __ PARAMETROS DA JANELA __
 janela.geometry("390x450+200+200")  # largura * altura + x + y
-janela.maxsize(width=390, height=450)  # tamanho maximo
+janela.resizable(width=False, height=False)
 janela.iconbitmap("../assets/img/icone.ico")  # icone do cabeçalho da janela
 janela.title("Pizzaria Top - Login do Usuario")  # texto do cabeçalho da janela
 janela.configure(background='#CCCCCC')  # cor de fundo da janela

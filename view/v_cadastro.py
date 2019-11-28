@@ -75,7 +75,7 @@ class tela_cadastro:
 
         # __ PARAMETROS DA JANELA __
         janela.geometry("390x450+200+200")
-        janela.maxsize(width=390, height=450)
+        janela.resizable(width=False, height=False)
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - Cadastro de Usuario")
         janela.configure(background='#CCCCCC')

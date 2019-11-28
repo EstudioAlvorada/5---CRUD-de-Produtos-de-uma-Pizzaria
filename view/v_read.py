@@ -20,7 +20,7 @@ class tela_read:
 
         # __ PARAMETROS DA JANELA __
         janela.geometry("390x450+200+200")
-        janela.maxsize(width=390, height=450)
+        janela.resizable(width=False, height=False)
         janela.iconbitmap("../assets/img/icone.ico")
         janela.title("Pizzaria Top - CRUD Produtos - Procurar")
         janela.configure(background='#CCCCCC')
