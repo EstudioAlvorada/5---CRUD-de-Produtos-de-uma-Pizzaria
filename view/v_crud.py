@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter.ttk import Combobox
 
 class CRUDWindow:
     def OpenCRUD(self):
@@ -16,12 +17,46 @@ class CRUDWindow:
         # -- Aba Creat (1) -- ==========================================================================================
         abas.add(aba_creat, text=' (C) Adicionar ')
         # Logo Pizzaria Top
-        img1 = PhotoImage(file="../assets/img/logo.png")
-        logo1 = img1.subsample(2, 2)
-        label1 = Label(aba_creat, image=logo1) ; label1.place(x=0, y=0)
+        img11 = PhotoImage(file="../assets/img/logo.png")
+        logo11 = img11.subsample(2, 2)
+        label11 = Label(aba_creat, image=logo11) ; label11.place(x=0, y=0)
+
         # Titulo da janela
         lb1 = Label(aba_creat, text=" Adicionar == Creat ") ; lb1.grid(row=0, column=0) ; lb1.place(x=0, y=140)
         lb1.configure(font=fonte, foreground="#FFFFFF", background="#000000", width=30)
+
+        # Nome
+        lb1 = Label(aba_creat, text="Nome: ") ; lb1.grid(row=1, column=1) ; lb1.place(x=10, y=175)
+        lb1.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed1 = Entry(aba_creat, font=fonte, width=23) ; ed1.grid(row=1, column=2) ; ed1.place(x=90, y=175)
+
+        # Validade
+        lb2 = Label(aba_creat, text="Validade: ") ; lb2.grid(row=1, column=1) ; lb2.place(x=10, y=215)
+        lb2.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed2 = Entry(aba_creat, font=fonte, width=10) ; ed2.grid(row=1, column=2) ; ed2.place(x=120, y=215)
+
+        # Gasto
+        lb3 = Label(aba_creat, text="Gasto: ") ; lb3.grid(row=1, column=1) ; lb3.place(x=10, y=255)
+        lb3.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed3 = Entry(aba_creat, font=fonte, width=12) ; ed3.grid(row=1, column=2) ; ed3.place(x=95, y=255)
+
+        # Preço
+        lb4 = Label(aba_creat, text="Preço: ") ; lb4.grid(row=1, column=1) ; lb4.place(x=10, y=295)
+        lb4.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        ed4 = Entry(aba_creat, font=fonte, width=12) ; ed4.grid(row=1, column=2) ; ed4.place(x=95, y=295)
+
+        # Tipo
+        lb5 = Label(aba_creat, text="Tipo: ") ; lb5.grid(row=1, column=1) ; lb5.place(x=10, y=330)
+        lb5.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        combo5 = Combobox(aba_creat, font=fonte, state="readonly")
+        combo5.grid(row=1, column=1) ; combo5.place(x=95, y=330)
+        combo5['values'] = ("Text-1", "Text-2") ; combo5.current(0)
+
+        # Botão Gravar (1)
+        btn1 = Button(aba_creat, text="Gravar", font=fonte, fg="#000000")
+        btn1.grid(row=2, column=1) ; btn1.place(x=150, y=380)
+        #bt1["command"] = partial()
+
 
         # Colocando a Aba (2) na tela
         aba_read = ttk.Frame(abas)

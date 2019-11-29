@@ -36,6 +36,9 @@ class MainWindow:
             else:
                 print("senhas diferentes")
 
+        #def cadastrar-se():
+
+
         # Criando as Abas do Usuario
         abas = ttk.Notebook(window)
 
@@ -72,11 +75,10 @@ class MainWindow:
         bt1["command"] = partial(btn_login)
 
         # Botão Cadastrar () = ( EM DESENVOLVIMENTO )
-        #bt2 = Button(aba_login, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
-        #             activebackground="#000000", activeforeground="#FFFFFF", width=15)
-        #bt2.grid(row=4, column=2);
-        #bt2.place(x=120, y=375)
-        #bt2["command"] = partial(btn_click)
+        bt3 = Button(aba_login, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
+                     activebackground="#000000", activeforeground="#FFFFFF", width=15)
+        bt3.grid(row=4, column=2) ; bt3.place(x=120, y=375)
+        #bt3["command"] = partial()
 
         # Colocando a Aba (2) na tela
         aba_cadastro = ttk.Frame(abas)
