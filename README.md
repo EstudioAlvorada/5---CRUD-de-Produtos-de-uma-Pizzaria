@@ -1,8 +1,8 @@
 ## ATIVIDADE DE PYTHON
 
 <h4>Desenvolvedores:</h4><br>
-<h5>Marcus Primo</h5><br>
-<h5>Renan Santos</h5>
+Marcus Primo<br>
+Renan Santos
 
-<h5>Orientador:</h5><br>
-<h2>Diego</h2>
+<h4>Orientador:</h4><br>
+Diego Meruoca
