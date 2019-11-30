@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import tkinter.colorchooser
 from functools import partial
 from view.v_crud import CRUDWindow
 from controller.controller_usu import ControllerLogin
@@ -38,8 +39,8 @@ class MainWindow:
 
         #def cadastrar-se():
 
-
-        # Criando as Abas do Usuario
+        # - __TELA__ -
+        # Criando as Abas da Main
         abas = ttk.Notebook(window)
 
         # fonte dos textos
@@ -70,13 +71,13 @@ class MainWindow:
 
         # Botão Confirmar (1)
         bt1 = Button(aba_login, font=fonte, text="Confirmar", fg="#000000",
-                     activebackground="#CCCCCC", activeforeground="#FFFFFF", width=20)
+                     activebackground="#CCCCCC", activeforeground="#FFFFFF", width=20, borderwidth=2, relief="solid")
         bt1.grid(row=3, column=3) ; bt1.place(x=65, y=320)
         bt1["command"] = partial(btn_login)
 
         # Botão Cadastrar () = ( EM DESENVOLVIMENTO )
         bt3 = Button(aba_login, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
-                     activebackground="#000000", activeforeground="#FFFFFF", width=15)
+                     activebackground="#000000", activeforeground="#FFFFFF", width=15, borderwidth=2, relief="solid")
         bt3.grid(row=4, column=2) ; bt3.place(x=120, y=375)
         #bt3["command"] = partial()
 
@@ -116,7 +117,7 @@ class MainWindow:
 
         # Botão Cadastrar (2)
         bt2 = Button(aba_cadastro, font=('Arial', '12', 'bold'), text="Cadastrar", fg="#000000",
-                     activebackground="#CCCCCC", activeforeground="#FFFFFF")
+                     activebackground="#CCCCCC", activeforeground="#FFFFFF", borderwidth=2, relief="solid")
         bt2.grid(row=9, column=1) ; bt2.place(x=15, y=420)
         bt2["command"] = partial(cadastra)
 
@@ -128,7 +129,7 @@ class MainWindow:
         # Exibe o notebook na tela usando pack e configura para redimencionar com a janela
         abas.pack(expand=1, fill='both')
         # __ CONFIGURAÇÕES DA TELA __
-        window.geometry("390x480+200+200")  # largura * altura + x + y
+        window.geometry("390x480+450+100")  # largura * altura + x + y
         window.resizable(width=False, height=False)
         window.iconbitmap("../assets/img/icone.ico")  # icone do cabeçalho da janela
         window.title(" Pizzaria Top - Main ")  # texto do cabeçalho da janela
