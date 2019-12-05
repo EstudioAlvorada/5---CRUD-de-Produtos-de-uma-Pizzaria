@@ -1,12 +1,20 @@
+from functools import partial
 from tkinter import *
 from tkinter import ttk
 from tkinter.ttk import Combobox
+from controller.controller_usu import Controllercrud
 
 
 class CRUDWindow:
     def OpenCRUD(self):
         window = Tk()
+
         # - Funções -
+        def btnCreat():
+            controllerP = Controllercrud()
+            resulP = controllerP.criar(ed1.get(), ed3.get(), ed4.get())
+            if resulP == True:
+                print("CRIADO")
 
         # - __TELA__ -
         # Criando as Abas do CRUD
@@ -67,7 +75,7 @@ class CRUDWindow:
         # Botão Gravar (1)
         btn1 = Button(aba_create, text="Gravar", font=fonte, fg="#24485B", borderwidth=2, relief="solid")
         btn1.grid(row=2, column=1) ; btn1.place(x=150, y=380)
-        #bt1["command"] = partial()
+        btn1["command"] = partial(btnCreat)
 
 
         # Colocando a Aba (2) na tela

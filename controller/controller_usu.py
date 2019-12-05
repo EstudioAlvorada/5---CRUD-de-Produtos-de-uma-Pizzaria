@@ -1,7 +1,6 @@
 from model.conexao import ConectaBanco
 
 class ControllerLogin():
-
     def insere(self, usuario, senha, nome):
         banco = ConectaBanco()
         banco.insereUsuario(usuario, senha, nome)
@@ -12,4 +11,12 @@ class ControllerLogin():
         return resultado
 
 
+class Controllercrud():
+    def criar(self, nomeP, gastoP, precoP):
+        teste = ConectaBanco()
+        teste.adicionar(nomeP, gastoP, precoP)
 
+
+    #def ler(self):
+    #def atualizar(self):
+    #def deletar(self):

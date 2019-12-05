@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-import tkinter.colorchooser
 from functools import partial
 from view.v_crud import CRUDWindow
 from controller.controller_usu import ControllerLogin
@@ -18,6 +17,7 @@ class MainWindow:
               telacrud = CRUDWindow()
               window.destroy()
               telacrud.OpenCRUD()
+
 
         def cadastra():
             controller = ControllerLogin()
@@ -46,14 +46,49 @@ class MainWindow:
         # fonte dos textos
         fonte = ('Arial', '16', 'bold')
 
-        # Colocando a Aba (1) na tela
+        # Colocando a Aba_LOGIN (1) na tela
         aba_login = ttk.Frame(abas)
+
+        # EM DESENVOLVIMENTO
+#=======================================================================================================================
+        #teste = ttk.Frame(abas)
+        #abas.add(teste, text=' TESTE ')
+
+        # Logo Pizzaria Top
+        #img0 = PhotoImage(file="../assets/img/logo.png")
+        #logo0 = img0.subsample(2, 2)
+        #label0 = Label(teste, image=logo0);
+        #label0.place(x=0, y=0)
+        #label0.configure(borderwidth=2, relief="solid")
+
+        #quadro = Frame(teste,
+        #               width=386, # largura
+        #               height=319)# altura
+        #quadro.grid(row=0, column=0) ; quadro.place(x=0, y=135)
+        #quadro.configure(borderwidth=2, relief="solid", background="#CCCCCC")
+
+        # Titulo da janela
+        #lb0 = Label(quadro, text="LOGIN");
+        #lb0.grid(row=0, column=0);
+        #lb0.place(x=0, y=0)
+        #lb0.configure(font=fonte, foreground="#FFFFFF", background="#000000", width=30)
+        # Login
+        #lb1 = Label(quadro, text="Login: ");
+        #lb1.place(x=10, y=30)
+        #lb1.configure(font=fonte, foreground="#000000", background="#CCCCCC")
+        #ed1 = Entry(quadro, font=fonte, width=30);
+        #ed1.place(x=10, y=60)
+#=======================================================================================================================
+
+
+
         # -- Aba Login (1) -- ==========================================================================================
         abas.add(aba_login, text=' Login ')
         # Logo Pizzaria Top
         img1 = PhotoImage(file="../assets/img/logo.png")
         logo1 = img1.subsample(2, 2)
         label1 = Label(aba_login, image=logo1) ; label1.place(x=0, y=0)
+        label1.configure(borderwidth=2, relief="flat")
 
         # Titulo da janela
         lb0 = Label(aba_login, text="LOGIN") ; lb0.grid(row=0, column=0) ; lb0.place(x=0, y=140)

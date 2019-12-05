@@ -63,3 +63,12 @@ class ConectaBanco:  # Define a classe
                 return True
             else:
                 return False
+
+
+    def adicionar(self, nomeP, gastoP, precoP):
+        self.conecta()
+        cur = self.con.cursor()
+        queryP = ('insert into tbl_produtos (nome_produto, gasto_produto, venda_produto) values ("{}", "{}", "{}");'.format(nomeP, gastoP, precoP))
+        cur.execute(queryP)
+        self.con.commit()
+        self.con.close()
