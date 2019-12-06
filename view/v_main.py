@@ -46,9 +46,6 @@ class MainWindow:
         # fonte dos textos
         fonte = ('Arial', '16', 'bold')
 
-        # Colocando a Aba_LOGIN (1) na tela
-        aba_login = ttk.Frame(abas)
-
         # EM DESENVOLVIMENTO
 #=======================================================================================================================
         #teste = ttk.Frame(abas)
@@ -80,8 +77,8 @@ class MainWindow:
         #ed1.place(x=10, y=60)
 #=======================================================================================================================
 
-
-
+        # Colocando a Aba_LOGIN (1) na tela
+        aba_login = ttk.Frame(abas)
         # -- Aba Login (1) -- ==========================================================================================
         abas.add(aba_login, text=' Login ')
         # Logo Pizzaria Top
@@ -111,9 +108,9 @@ class MainWindow:
         bt1["command"] = partial(btn_login)
 
         # Botão Cadastrar () = ( EM DESENVOLVIMENTO )
-        bt3 = Button(aba_login, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
-                     activebackground="#000000", activeforeground="#FFFFFF", width=15, borderwidth=2, relief="solid")
-        bt3.grid(row=4, column=2) ; bt3.place(x=120, y=375)
+        #bt3 = Button(aba_login, font=('Arial', '12', 'bold'), text="Cadastrar-se", fg="#24485B",
+        #             activebackground="#000000", activeforeground="#FFFFFF", width=15, borderwidth=2, relief="solid")
+        #bt3.grid(row=4, column=2) ; bt3.place(x=120, y=375)
         #bt3["command"] = partial()
 
         # Colocando a Aba (2) na tela
